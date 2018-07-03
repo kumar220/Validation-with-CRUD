@@ -1,10 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
 
-import { AppComponent } from './app.component';
-import { IndexComponent } from './index/index.component';
-import { CreateComponent } from './create/create.component';
-import { EditComponent } from './edit/edit.component';
+import {AppComponent} from './app.component';
+import {appRoutes} from './routerConfig';
+import {IndexComponent} from './index/index.component';
+import {CreateComponent} from './create/create.component';
+import {EditComponent} from './edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -13,10 +15,12 @@ import { EditComponent } from './edit/edit.component';
     CreateComponent,
     EditComponent
   ],
-  imports: [
-    BrowserModule
-  ],
   providers: [],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
